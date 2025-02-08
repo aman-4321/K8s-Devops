@@ -15,6 +15,7 @@ spec:
       containers:
         - name: backend
           image: amanclash4321/backend:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 4000
           resources:

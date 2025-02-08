@@ -15,6 +15,7 @@ spec:
       containers:
         - name: frontend
           image: amanclash4321/frontend:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
           resources:
