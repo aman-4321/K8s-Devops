@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: amanclash4321/backend:latest
+          ports:
+            - containerPort: 4000
+          resources:
+            requests:
+              cpu: "100m" # Minimum CPU required (100 millicores = 0.1 core)
+              memory: "128Mi" # Minimum Memory required
+            limits:
+              cpu: "500m" # Maximum CPU allowed (500 millicores = 0.5 core)
+              memory: "256Mi" # Maximum Memory allowed

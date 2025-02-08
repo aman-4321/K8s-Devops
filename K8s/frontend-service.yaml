@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  selector:
+    app: frontend
+  ports:
+    - protocol: TCP
+      port: 80 # Exposed to the outside world
+      targetPort: 3000 # Matches the frontend container
+  type: ClusterIP # Exposes the app externally
