@@ -15,7 +15,6 @@ spec:
     - host: k8.webprojects.live
       http:
         paths:
-          # API route must come BEFORE the frontend catch-all route
           - path: /api
             pathType: Exact
             backend:
@@ -23,7 +22,6 @@ spec:
                 name: backend-service
                 port:
                   number: 4000
-          # Frontend should be the last route as it's the catch-all
           - path: /
             pathType: Prefix
             backend:
@@ -31,3 +29,4 @@ spec:
                 name: frontend-service
                 port:
                   number: 80
+

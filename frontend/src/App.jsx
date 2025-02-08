@@ -3,24 +3,16 @@ import axios from "axios";
 
 async function getData() {
   try {
-    console.log("Making API request...");
     const response = await axios.get("/api", {
       headers: {
-        'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache',
-        'Expires': '0',
-      }, 
+        "Cache-Control": "no-cache",
+        Pragma: "no-cache",
+        Expires: "0",
+      },
     });
-    console.log("API Response:", response);
     return response.data;
-  } catch (error) {
-    console.error("API Error:", {
-      message: error.message,
-      status: error.response?.status,
-      data: error.response?.data,
-      config: error.config
-    });
-    throw error;
+  } catch {
+    console.log("error");
   }
 }
 
@@ -37,7 +29,11 @@ export default function Home() {
         setData(result);
       } catch (error) {
         console.error("Error in component:", error);
-        setError(error.response?.data?.message || error.message || "Failed to fetch data");
+        setError(
+          error.response?.data?.message ||
+            error.message ||
+            "Failed to fetch data",
+        );
       }
     };
 
@@ -62,3 +58,4 @@ export default function Home() {
     </main>
   );
 }
+

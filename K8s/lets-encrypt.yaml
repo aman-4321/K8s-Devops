@@ -4,11 +4,11 @@ metadata:
   name: letsencrypt-prod
 spec:
   acme:
-    server: https://acme-v02.api.letsencrypt.org/directory # Let's Encrypt API
+    server: https://acme-v02.api.letsencrypt.org/directory
     email: amanclash4321@gmail.com
     privateKeySecretRef:
-      name: letsencrypt-prod # Stores Let's Encrypt key
+      name: letsencrypt-prod
     solvers:
       - http01:
           ingress:
-            class: nginx # Uses NGINX Ingress
+            class: nginx

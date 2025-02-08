@@ -7,6 +7,6 @@ spec:
     app: frontend
   ports:
     - protocol: TCP
-      port: 80 # Exposed to the outside world
-      targetPort: 3000 # Matches the frontend container
-  type: ClusterIP # Exposes the app externally
+      port: 80
+      targetPort: 3000
+  type: ClusterIP

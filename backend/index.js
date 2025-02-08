@@ -4,21 +4,17 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-// More specific CORS configuration
 app.use(cors({
   origin: ['http://localhost:3000', 'https://k8.webprojects.live'],
   methods: ['GET'],
   credentials: true
 }));
 
-// Add cache control middleware
 app.use((req, res, next) => {
   res.set('Cache-Control', 'no-store');
   next();
 });
 
-// Add request logging
-app.use((req, res, next) => {
   console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
   next();
 });

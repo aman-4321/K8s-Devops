@@ -19,8 +19,8 @@ spec:
             - containerPort: 4000
           resources:
             requests:
-              cpu: "100m" # Minimum CPU required (100 millicores = 0.1 core)
-              memory: "128Mi" # Minimum Memory required
+              cpu: "100m"
+              memory: "128Mi"
             limits:
-              cpu: "500m" # Maximum CPU allowed (500 millicores = 0.5 core)
-              memory: "256Mi" # Maximum Memory allowed
+              cpu: "500m"
+              memory: "256Mi"
