@@ -28,6 +28,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  justify-content: flex-end;
+  padding-right: 50rem;
 }
 
 h1 {
